@@ -40,7 +40,7 @@ public class ModItems {
             });
 
     public static final RegistryObject<Item> GOLD_SHIELD = ITEMS.register("gold_shield",
-            () -> new ShieldItem(new Item.Properties().durability(356)){
+            () -> new ShieldItem(new Item.Properties().durability(322)){
 
                 @Override
                 public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {

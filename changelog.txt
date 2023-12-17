@@ -37,3 +37,7 @@ Changelog 1.0.1-1.20.4:
 - Added Coal Shield (smeltable)
 - Simplified code of End Crystal Shield
 - Added Tool Tips for Shields
+
+Changelog 1.0.2-1.20.4:
+
+- Changed durability from gold shield ( 356 to 322 )
