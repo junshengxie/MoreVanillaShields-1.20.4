@@ -40,4 +40,12 @@ Changelog 1.0.1-1.20.4:
 
 Changelog 1.0.2-1.20.4:
 
-- Changed durability from gold shield ( 356 to 322 )
+- Nerfed Leather Shield (durability 216 --> 196)
+- Nerfed Gold Shield (durability 356 --> 322)
+- Changed recipes (recipe should now work for other mods with the 'plank' tag)
+- Fixed Coal Shield recipe (now compatible with charcoal)
+- Netherite Shield is now fire-resistant
+- Removed Custom Creative Mode Tab
+- Added Items to the Combat Creative Mode Tab
+- Crafting remainder support added to the equipment slot
+- Fixed logo

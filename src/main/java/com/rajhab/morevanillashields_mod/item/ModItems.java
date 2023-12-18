@@ -25,7 +25,7 @@ public class ModItems {
 
     //Shield
     public static final RegistryObject<Item> LEATHER_SHIELD = ITEMS.register("leather_shield",
-            () -> new ShieldItem(new Item.Properties().durability(216)){
+            () -> new ShieldItem(new Item.Properties().durability(196)){
 
                 @Override
                 public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
@@ -81,6 +81,11 @@ public class ModItems {
                     }
 
                     super.appendHoverText(stack, level, components, flag);
+                }
+
+                @Override
+                public boolean isFireResistant() {
+                    return true;
                 }
             });
 
@@ -169,6 +174,8 @@ public class ModItems {
 
                     super.appendHoverText(stack, level, components, flag);
                 }
+
+
             });
 
     public static void register(IEventBus eventBus) {
