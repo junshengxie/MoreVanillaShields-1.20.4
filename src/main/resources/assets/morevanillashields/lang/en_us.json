@@ -10,6 +10,8 @@
   "item.morevanillashields.end_crystal_shield": "End Crystal Shield",
   "item.morevanillashields.obsidian_shield": "Obsidian Shield",
   "item.morevanillashields.coal_shield": "Coal Shield",
+  "item.morevanillashields.glass_shield": "Glass Shield",
+
 
   "item.moditems.shift": "Press \"SHIFT\" for more Info",
   "item.moditems.leather_shield": "Leather Shield. Durability is 196",
@@ -20,5 +22,6 @@
   "item.moditems.amethyst_shield": "Amethyst Shield. Durability is 432",
   "item.moditems.end_crystal_shield": "End Crystal Shield. Durability is 750",
   "item.moditems.obsidian_shield": "Obsidian Shield. Durability is 610",
-  "item.moditems.coal_shield": "Coal Shield. Durability is 268"
+  "item.moditems.coal_shield": "Coal Shield. Durability is 268",
+  "item.moditems.glass_shield": "Glass Shield. Durability is 300"
 }

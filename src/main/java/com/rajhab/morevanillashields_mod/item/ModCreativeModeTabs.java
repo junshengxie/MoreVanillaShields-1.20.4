@@ -49,6 +49,7 @@ public class ModCreativeModeTabs {
             //pOutput.accept(ModItems.REDSTONE_SHIELD.get());
             pOutput.accept(ModItems.EMERALD_SHIELD);
             pOutput.accept(ModItems.AMETHYST_SHIELD);
+            pOutput.accept(ModItems.GLASS_SHIELD);
             pOutput.accept(ModItems.DIAMOND_SHIELD);
             pOutput.accept(ModItems.OBSIDIAN_SHIELD);
             pOutput.accept(ModItems.NETHERITE_SHIELD);

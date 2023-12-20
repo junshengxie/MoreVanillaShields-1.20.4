@@ -4,12 +4,11 @@ import com.rajhab.morevanillashields_mod.morevanillashields;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ShieldItem;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.AnvilBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -61,6 +60,21 @@ public class ModItems {
                 public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
                     if (Screen.hasShiftDown()) {
                         components.add(Component.translatable("item.moditems.diamond_shield").withStyle(ChatFormatting.DARK_AQUA));
+                    } else {
+                        components.add(Component.translatable("item.moditems.shift").withStyle(ChatFormatting.LIGHT_PURPLE));
+                    }
+
+                    super.appendHoverText(stack, level, components, flag);
+                }
+            });
+
+    public static final RegistryObject<Item> GLASS_SHIELD = ITEMS.register("glass_shield",
+            () -> new ShieldItem(new Item.Properties().durability(300)){
+
+                @Override
+                public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
+                    if (Screen.hasShiftDown()) {
+                        components.add(Component.translatable("item.moditems.glass_shield").withStyle(ChatFormatting.DARK_AQUA));
                     } else {
                         components.add(Component.translatable("item.moditems.shift").withStyle(ChatFormatting.LIGHT_PURPLE));
                     }
