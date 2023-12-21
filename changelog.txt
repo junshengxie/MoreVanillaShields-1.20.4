@@ -53,5 +53,3 @@ Changelog 1.0.2-1.20.4:
 - Added Glass Shield (transparent)
 
 BANNER SUPPORT COMING SOON!
-
--test
