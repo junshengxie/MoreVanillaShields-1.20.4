@@ -83,6 +83,21 @@ public class ModItems {
                 }
             });
 
+    public static final RegistryObject<Item> TINTED_GLASS_SHIELD = ITEMS.register("tinted_glass_shield",
+            () -> new ShieldItem(new Item.Properties().durability(300)){
+
+                @Override
+                public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
+                    if (Screen.hasShiftDown()) {
+                        components.add(Component.translatable("item.moditems.tinted_glass_shield").withStyle(ChatFormatting.DARK_AQUA));
+                    } else {
+                        components.add(Component.translatable("item.moditems.shift").withStyle(ChatFormatting.LIGHT_PURPLE));
+                    }
+
+                    super.appendHoverText(stack, level, components, flag);
+                }
+            });
+
     public static final RegistryObject<Item> NETHERITE_SHIELD = ITEMS.register("netherite_shield",
             () -> new ShieldItem(new Item.Properties().durability(2042)){
 
