@@ -2,6 +2,7 @@ package com.rajhab.morevanillashields_mod;
 
 
 import com.mojang.logging.LogUtils;
+import com.rajhab.morevanillashields_mod.config.ShieldConfig;
 import com.rajhab.morevanillashields_mod.item.ModCreativeModeTabs;
 import com.rajhab.morevanillashields_mod.item.ModItems;
 import net.minecraft.client.renderer.item.ItemProperties;
@@ -12,7 +13,9 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -24,6 +27,7 @@ public class morevanillashields {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public morevanillashields() {
+
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModCreativeModeTabs.register(modEventBus);
@@ -31,14 +35,17 @@ public class morevanillashields {
 
         modEventBus.addListener(this::commonSetup);
 
-        MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ShieldConfig.SPEC, "morevanillashields-client.toml");
+
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 
-    }
 
+    }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
     }
 

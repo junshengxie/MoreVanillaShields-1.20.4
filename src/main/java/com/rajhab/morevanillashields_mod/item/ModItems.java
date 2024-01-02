@@ -1,5 +1,6 @@
 package com.rajhab.morevanillashields_mod.item;
 
+import com.rajhab.morevanillashields_mod.config.ShieldConfig;
 import com.rajhab.morevanillashields_mod.morevanillashields;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -37,6 +38,8 @@ public class ModItems {
                     super.appendHoverText(stack, level, components, flag);
                 }
             });
+
+
 
     public static final RegistryObject<Item> GOLD_SHIELD = ITEMS.register("gold_shield",
             () -> new ShieldItem(new Item.Properties().durability(322)){
