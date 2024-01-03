@@ -57,7 +57,7 @@ public class ModItems {
             });
 
     public static final RegistryObject<Item> DIAMOND_SHIELD = ITEMS.register("diamond_shield",
-            () -> new ShieldItem(new Item.Properties().durability(512)){
+            () -> new ShieldItem(new Item.Properties().durability(ShieldConfig.diamond_shield_durability.get())){
 
                 @Override
                 public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
