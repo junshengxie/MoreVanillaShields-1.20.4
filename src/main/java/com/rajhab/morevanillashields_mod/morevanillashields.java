@@ -34,7 +34,6 @@ public class morevanillashields {
         ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
-
         modEventBus.addListener(this::addCreative);
 
         ModLoadingContext.get().registerConfig(Type.CLIENT, ShieldConfig.SPEC, "morevanillashields-client.toml");
@@ -42,12 +41,12 @@ public class morevanillashields {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
-
+    public void commonSetup(final FMLCommonSetupEvent event) {
 
     }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
     }
+
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
@@ -67,6 +66,7 @@ public class morevanillashields {
         public static void onClientSetup(FMLClientSetupEvent event) {
 
             event.enqueueWork(() -> {
+
 
                 ItemProperties.register(ModItems.LEATHER_SHIELD.get(), BLOCKING_PROPERTY_RESLOC, ($itemStack, $level, $entity, $seed) -> {
                     return $entity != null && $entity.isUsingItem() && $entity.getUseItem() == $itemStack ? 1.0F : 0.0F;

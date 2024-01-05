@@ -1,6 +1,7 @@
 package com.rajhab.morevanillashields_mod.item;
 
 import com.rajhab.morevanillashields_mod.config.ShieldConfig;
+import com.rajhab.morevanillashields_mod.morevanillashields;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.ModLoadingContext;
