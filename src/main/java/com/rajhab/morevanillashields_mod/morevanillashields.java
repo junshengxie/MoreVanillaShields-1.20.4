@@ -1,11 +1,11 @@
 package com.rajhab.morevanillashields_mod;
 
-
 import com.mojang.logging.LogUtils;
-import com.rajhab.morevanillashields_mod.item.ModCreativeModeTabs;
 import com.rajhab.morevanillashields_mod.item.ModItems;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
+
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -20,49 +20,60 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-@Mod(morevanillashields.MOD_ID)
-public class morevanillashields {
-    public static final String MOD_ID = "morevanillashields";
-    public static final Logger LOGGER = LogUtils.getLogger();
+import static com.rajhab.morevanillashields_mod.item.ModCreativeModeTabs.CREATIVE_MODE_TABS;
+import static com.rajhab.morevanillashields_mod.item.ModItems.ITEMS;
 
-    public morevanillashields() {
+
+@Mod(morevanillashields.MOD_ID)
+public class morevanillashields
+{
+
+    public static final String MOD_ID = "morevanillashields";
+    private static final Logger LOGGER = LogUtils.getLogger();
+    public morevanillashields()
+    {
+        //ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MoreVanillaShieldsConfig.SPEC, "morevanillashields-common.toml");
+        //ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, MoreVanillaShieldsConfig.SPEC, "morevanillashields-client.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER ,ShieldConfig.SPEC, "morevanillashields-server.toml");
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ShieldConfig.SPEC, "morevanillashields-server.toml");
-
-        ModCreativeModeTabs.register(modEventBus);
-        ModItems.register(modEventBus);
-
         modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(this::addCreative);
+
+        ITEMS.register(modEventBus);
+        CREATIVE_MODE_TABS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
+
+        modEventBus.addListener(this::addCreative);
     }
 
-    public void commonSetup(final FMLCommonSetupEvent event) {
-
+    private void commonSetup(final FMLCommonSetupEvent event)
+    {
+        LOGGER.info(MOD_ID + ": This mod now runs with a config file. Feel free to use it!");
     }
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+
+    private void addCreative(BuildCreativeModeTabContentsEvent event)
+    {
     }
 
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-
+    public void onServerStarting(ServerStartingEvent event)
+    {
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
+
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
+    public static class ClientModEvents
+    {
 
         private static ResourceLocation BLOCKING_PROPERTY_RESLOC =
                 new ResourceLocation(morevanillashields.MOD_ID, "blocking");
 
-
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
+        public static void onClientSetup(FMLClientSetupEvent event)
+        {
 
             event.enqueueWork(() -> {
 

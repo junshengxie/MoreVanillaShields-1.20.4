@@ -1,6 +1,6 @@
 package com.rajhab.morevanillashields_mod;
 
-import com.rajhab.morevanillashields_mod.morevanillashields;
+
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.ForgeConfigSpec;
@@ -13,8 +13,8 @@ public class ShieldConfig
 {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
-    public static final ForgeConfigSpec.Builder PUSH = BUILDER
-            .push("README!!!!!!!!!!!!!!!!!!!! Only change the Values before creating a world or a server (If you want to change the values)! Or change the values before creating or having a Shield! If you change the values (and you already used a shield), your world should break. And don't forget to restart your world / server. Thanks");
+    public static final ForgeConfigSpec.Builder P = BUILDER
+            .push("README!!!!!!!!!!!!!!!!!!!! Only change the Values before creating a world or a server! Or change the values before creating or having a Shield! If you change the values (and you already used a shield), your world should break");
 
     public static final ForgeConfigSpec.ConfigValue<Integer> LEATHER_SHIELD_DURABILITY = BUILDER
             .comment("Durability of Leather Shield. Default Value is 196")
