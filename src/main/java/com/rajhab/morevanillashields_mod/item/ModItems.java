@@ -149,9 +149,6 @@ public class ModItems {
                 }
             });
 
-    /*public static final RegistryObject<Item> REDSTONE_SHIELD = ITEMS.register("redstone_shield",
-            () -> new ShieldItem(new Item.Properties().durability(316)));*/
-
     public static final RegistryObject<Item> EMERALD_SHIELD = ITEMS.register("emerald_shield",
             () -> new ShieldItem(new Item.Properties().defaultDurability(512)){
 

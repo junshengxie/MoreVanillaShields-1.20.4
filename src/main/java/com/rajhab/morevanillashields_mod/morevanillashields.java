@@ -2,7 +2,6 @@ package com.rajhab.morevanillashields_mod;
 
 import com.mojang.logging.LogUtils;
 import com.rajhab.morevanillashields_mod.item.ModItems;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 
