@@ -22,7 +22,6 @@ import org.slf4j.Logger;
 import static com.rajhab.morevanillashields_mod.item.ModCreativeModeTabs.CREATIVE_MODE_TABS;
 import static com.rajhab.morevanillashields_mod.item.ModItems.ITEMS;
 
-
 @Mod(morevanillashields.MOD_ID)
 public class morevanillashields
 {
