@@ -60,3 +60,7 @@ Changelog 1.0.3-1.20.4:
 - Updated to forge 49.0.14
 - Finished Config support
 - Changed language files
+
+Changelog 1.0.4-1.20.4:
+
+- Updated to forge 49.0.16
